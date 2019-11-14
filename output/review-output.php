@@ -241,7 +241,8 @@ Class saswp_review_output{
                             </td>
                         </tr>'; 
                    }   
-                }                                                                                                              
+                }
+		$ov_rating = isset($saswp_over_all_rating)? esc_attr(number_format((float)$saswp_over_all_rating, 2, '.', '')):'';
                 $boxdata.='<tr>
                             <td class="saswp-rvw-sm">
                                 <span>'.esc_html__('SUMMARY', 'schema-and-structured-data-for-wp').'</span>
@@ -251,7 +252,7 @@ Class saswp_review_output{
                             </td>
                             <td>
                                 <div class="saswp-rvw-ov">
-                                    <div class="saswp-rvw-fs">'.isset($saswp_over_all_rating)? esc_attr(number_format((float)$saswp_over_all_rating, 2, '.', '')):''.'</div>';
+                                    <div class="saswp-rvw-fs">'.$ov_rating.'</div>';
                                                                         
                                     if($saswp_over_all_rating !=''){
                                         
